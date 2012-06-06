@@ -1,0 +1,42 @@
+@import url(fonts.css);
+
+root { 
+    display: block;
+}
+
+
+
+a.appNameLink{
+    padding: 20px 20px;
+    font-family: FredokaOne;
+    color: snow;
+    text-decoration: none;
+}
+div.clear{
+    clear:both;
+}
+
+
+li{
+    border-top: 1px solid #CECECE;
+    border-bottom: 1px solid #CECECE;
+    padding: 0px 10px;
+}
+a.mensaje{
+    text-decoration: none;
+    line-height: 0px;
+    color: black;
+    padding: 0px 10px;
+}
+.cUserneim{
+    float: left;
+    font-size: 0.9em;
+}
+.cData{
+    float: right;
+    font-size: 0.7em;
+}
+.cMensaje{
+    line-height: 15px;
+    font-size: 0.9em;
+}

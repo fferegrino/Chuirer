@@ -1,0 +1,112 @@
+/* 
+    Document   : grupos
+    Created on : 24-may-2012, 20:53:01
+    Author     : Miguel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+ 
+#lista a:link {
+text-decoration: none;
+color: #6699ff;
+}
+
+
+#lista a:visited {
+text-decoration: none;
+color: #6699ff;
+}
+
+#lista a:hover{
+    color: #0000ff;
+    text-decoration: none;
+}
+
+#hen{
+    float:  outside;
+    margin: 0px auto;
+    width: 900px;
+    font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+}
+
+.divGrupos{
+    background-color: #fafafa;
+    width: 350px;
+    box-shadow: 0px 0px 3px #000;
+    border-radius: 10px;
+    padding: 10px;
+    float:left;
+    margin: 10px 10px;
+    overflow-wrap: break-word;
+    font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;   
+}
+
+.divGrupos a:link {
+text-decoration: none;
+/*color: #6699ff;*/
+padding: 5px 5px;
+font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+color: black;
+
+}
+
+
+.divGrupos a:visited {
+text-decoration: none;
+/*color: #6699ff;*/
+font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+color: black;
+}
+
+.divGrupos a:hover{   
+    color: #0000ff;
+    text-decoration: none;
+}
+
+#parrafo {
+padding: 0px 5px;
+font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+color: black;
+border-bottom: 1px solid #CCC;
+font-weight: bold;
+}
+
+input[type=text],input[type=password],textarea{
+    padding: 5px;
+    border-radius:5px;
+    font-size: 1.2em;
+}
+/*para cada td del AC*/
+.autoCo{
+    color: black;
+    background-color: #e2dfdf;
+    border-radius: 5px;
+  
+}
+
+.mouseOut {
+        background:   #a9e4f7;
+        color: black;
+        border-radius: 5px;
+}
+.mouseOver {    
+    color: #000000;
+    background-color: #e2dfdf;
+    border-radius: 5px;
+}
+
+.tablaAC{
+    width: 100%;   
+    padding: 5px;    
+    border-color: blue;
+}
+
+.divAcoplador{
+    height: 50px;
+}

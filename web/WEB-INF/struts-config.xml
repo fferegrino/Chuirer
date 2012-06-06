@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="amigosBean" type="chuirer.beans.amigosBean"/>
+        <form-bean name="seguidorsresBean" type="chuirer.beans.seguidorsresBean"/>
+        
+        <form-bean name="SEGUIDOSBean" type="chuirer.beans.SEGUIDOSBean"/>
+        
+        <form-bean name="gruposBean" type="chuirer.beans.gruposBean"/> 
+        <form-bean name="messageBean" type="chuirer.beans.messageBean"/>
+        <form-bean name="nuevo" type="chuirer.beans.nuevo"/>
+        <form-bean name="publicProfile" type="chuirer.beans.publicProfile"/>
+        <form-bean name="logOffBean" type="chuirer.beans.logOffBean"/>
+        <form-bean name="adminBean" type="chuirer.beans.adminBean"/>
+        <form-bean name="editProfileBean" type="chuirer.beans.editProfileBean"/>
+        <form-bean name="profile" type="chuirer.beans.profile"/>
+        <form-bean name="succesReg" type="chuirer.beans.succesReg"/>
+        <form-bean name="registro" type="chuirer.beans.registro"/>
+        <form-bean name="login" type="chuirer.beans.login"/>
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+        <forward name="log_off" path="/logoff.do" />
+        <forward name="go_prof" path="/profile.do" />
+        <forward name="peticiones" path="/petitions.do" />
+        <forward name="not_exists" path="/sitios/nexiste.jsp" />
+        <forward name="protected" path="/sitios/protected.jsp" />
+        <forward name="seg" path="/seguidosres.do" />
+        <forward name="go_Gpos" path="/grupos.do" />
+    </global-forwards>
+    <action-mappings>
+        <action name="login" path="/login" scope="request" type="chuirer.action.loginAction" validate="false">
+           <!-- <forward name="success" path="/sitios/profilepage.jsp"/> -->
+            <forward name="success" path="/profile.do" />
+            <forward name="failure"  path="/sitios/login.jsp"/>
+            <forward name="m_failure"  path="/sitios/mobilelogin.jsp"/>
+            <forward name="register" path="/sitios/registro.jsp" />
+        </action>
+        <action name="registro" path="/register" scope="request" type="chuirer.action.registra" validate="false">
+            <forward name="success" path="/sitios/success.jsp"/>
+            <forward name="failure" path="/sitios/registro.jsp" />
+        </action>
+        <action name="succesReg" path="/continueReg" scope="request" type="chuirer.action.continueReg">
+            <forward name="success" path="/login.do" />
+        </action>
+        <action name="profile" path="/profile" validate="false" scope="request" type="chuirer.action.profilePage">
+            <forward name="noexiste" path="/login.do" />
+            <forward name="logoff" path="/login.do" />
+            <forward name="success" path="/sitios/profilepage.jsp" />
+            <forward name="m_success" path="/sitios/movilprofilepage.jsp" />
+            <forward name="editar_perfil" path="/editProfile.do" />
+            <forward name="admin" path="/admin.do" />
+        </action>
+        <action input="/editProfile" name="editProfileBean" path="/editProfile" scope="request" type="chuirer.action.editProfileAction" validate="false">
+            <forward name="success" path="/sitios/editprofile.jsp" />
+        </action>
+        <action input="/admin" name="adminBean" path="/admin" scope="request" type="chuirer.action.adminAction" validate="false">
+            <forward name="success" path="/sitios/admin.jsp" />
+        </action>
+        <action input="/logoff" name="logOffBean" path="/logoff" scope="request" type="chuirer.action.logOffAction" validate="false">
+            <forward name="success" path="/login.do" />
+        </action>
+        <action input="/publico" name="publicProfile" path="/public" scope="request" type="chuirer.action.publicProfileAction" validate="false">
+            <forward name="success" path="/sitios/publico.jsp" />
+        </action>
+        <action input="/" name="messageBean" path="/message" scope="request" type="chuirer.action.messageAction">
+            <forward name="success" path="/sitios/message.jsp" />
+        </action>
+        <action input="/" name="profile" path="/petitions" scope="request" type="chuirer.action.managePetitions" validate="false">
+            <forward name="success" path="/sitios/peticiones.jsp" /> 
+        </action>
+        <action input="/" name="SEGUIDOSBean" path="/seguidos" scope="request" type="chuirer.action.SEGUIDOSAction" validate="false">
+            <forward name="success" path="/sitios/Prueba.jsp" />
+        </action>
+        <action input="/" name="gruposBean" path="/grupos" scope="request" type="chuirer.action.gruposAction" validate="false">
+            <forward name="todosLosGrupos" path="/sitios/allGrupos.jsp" />
+            <forward name="singleGpo" path="/sitios/singleGrupo.jsp" />
+            <forward name="seguidos" path="/sitios/gruposSeguidos.jsp" />
+            <forward name="crearGpo" path="/sitios/crearGpo.jsp" />
+            <forward name="noExiste" path="/sitios/noExisteGpo.jsp" />     
+            <forward name="eliminar" path="/sitios/eliminarGpo.jsp" />
+        </action>
+        <action input="/" name="seguidorsresBean" path="/seguidosres" scope="request" type="chuirer.action.seguidosseguidores" validate="false">
+            <forward name="success" path="/sitios/seguidosres.jsp" />
+        </action>
+                    
+        <action input="/" name="amigosBean" path="/amigos" scope="session" type="chuirer.action.amigosAction" validate="false">
+                <forward name="success" path="/sitios/allAmigos.jsp" /> 
+                <forward name="sugerencias" path="/sitios/sugerenciasAmigos.jsp" /> 
+         </action>
+        
+        
+        <action input="/login" name="login" path="/registra" scope="session" type="chuirer.action.registra"/>
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/chuirer"/>    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

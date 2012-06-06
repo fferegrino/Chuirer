@@ -1,0 +1,27 @@
+@font-face{
+    font-family: FredokaOne;
+    src: url('../recursos/fonts/FredokaOne-Regular.ttf');
+}
+@font-face{
+    font-family: Asap;
+    font-weight: bold;
+    src: url('../recursos/fonts/Asap-Bold.ttf');
+}
+@font-face{
+    font-family: Asap;
+    src: url('../recursos/fonts/Asap-Regular.ttf');
+}
+@font-face{
+    font-family: Ubuntu;
+    font-stretch: condensed;
+    src: url('../recursos/fonts/UbuntuCondensed-Regular.ttf');
+}
+@font-face{
+    font-family: Trocchi;
+    src: url('../recursos/fonts/Trocchi-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'Doppio One';
+    src: url('../recursos/fonts/DoppioOne-Regular.ttf');
+}

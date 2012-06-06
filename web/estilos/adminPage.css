@@ -1,0 +1,17 @@
+.userdiv{
+    border-top: 3px solid #444444;
+    margin: 3px;
+    width: 180px;
+    float: left;
+    font-size: 0.7em;
+    padding: 10px;
+}
+
+.userdiv .user{
+    font-size: 2em;
+    margin-top: 0px;
+}
+
+.userdiv input[type=button]{
+    font-size: 0.9em;
+}

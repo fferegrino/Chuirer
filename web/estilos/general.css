@@ -1,0 +1,449 @@
+body{
+    background-color: #ccc;
+    background-image: url(../images/sitio/bg.png);
+    background-repeat: repeat-y;
+    background-position:center; 
+}
+div.innerDiv{
+    margin: 0px auto;
+    width: 900px;
+    font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+}
+
+.realname{
+    color: #2E2E2E;
+}
+#usrMenuBar input[type=button],
+#usrMenuBar input[type=submit]{
+    font-family: Asap, sans;
+    color: white;
+    font-size: 0.9em;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#profileDiv, #appInfo{
+
+    /*
+    background-color: #fafafa;
+    width: 350px;
+    box-shadow: 0px 0px 3px #000;
+    border-radius: 10px;
+    padding: 10px;
+    float:left;
+    margin: 10px 10px;
+    overflow-wrap: break-word;
+    font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+    */
+}
+#profileDiv span.username{
+    font-size: 1.1em;
+}
+#profileDiv span.realname{
+    font-family: Trocchi;
+    font-size: 0.7em;
+
+}
+#profileDiv img[id="profilepic"]{
+    width: 60px;
+    height: 60px;
+    float:left;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+#profileDiv p{
+    margin-top: 0px;
+}
+#profileDiv span.username:before{
+    content: "@";
+}
+#profileDiv a{
+    text-decoration: none;
+    width: 220px;
+    overflow: hidden;
+    color: black;
+    font-size: 0.9em;
+}
+
+#profileDiv p{
+    line-height: 17px;
+}
+#profileDiv #usuario{
+    font-size: 1.2em;
+
+}
+#profileDiv #nombre{
+    font-size: 0.95em;
+    margin-top: -2px;
+}
+#profileDiv #descripcion{
+    font-size: 0.95em;
+    min-height: 35px;
+    margin-top: -2px;
+    word-wrap: break-word;
+}
+#thobber{
+    position: absolute;
+    margin: 40px;
+    display: none;
+}
+.clear{
+    clear: both;
+}
+
+.userneim{
+    font-size: 1.3em;
+}
+.userneim:before{
+    content: "@";
+}
+#tweetBox{
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    width: 320px;
+    resize: none;
+    height: 60px;
+    font-size: 0.9em;
+    font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+    box-shadow: inset 0px 0px 2px #555;
+    outline: none;
+}
+#tweetBox:active,#tweetBox:focus,#tweetBox:hover{
+    box-shadow: 0px 0px 10px #999;
+}
+.mensajeNormal{
+    font-size: 0.9em;
+}
+.mensajeAdvertido{
+    background-color: lightcoral;
+}
+
+.stats/*Para estilizar las estadisticas en el perfil*/
+{
+    font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+    float: left;
+    width: 100px;
+    padding: 0px 5px;
+    text-align: left;
+    line-height: 0px;
+}
+.stats:hover{
+    text-shadow: 1px 1px 1px #CCC;
+}
+a .stats, a:hover .stats{
+    color: black;
+    text-decoration: underline;
+}
+.stats p:first-child{
+    font-weight: bold;
+}
+.stats p:last-child{
+    font-size: 0.7em;
+    text-transform: uppercase;
+}
+.btnAltern{
+    height: 30px;
+    /*width: 100px;*/
+    font-family: Ubuntu, sans-serif;
+    font-size: 1.2em;
+    text-shadow:0 1px 1px rgba(255, 255, 255, 0.75);background-color:#fafafa;
+    background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
+    background-image:-moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
+    background-image:-ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    background-image:-o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    background-image:linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    background-repeat:no-repeat;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+    border:1px solid #ccc;border-bottom-color:#bbb;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;border-radius:4px;
+    -webkit-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor:pointer;
+}
+.btnAltern:hover{
+    height: 30px;
+    /*width: 100px;*/
+    font-family: Ubuntu, sans-serif;
+    font-size: 1.2em;
+    /*
+    text-shadow:0 1px 1px rgba(255, 255, 255, 0.75);background-color:#fafafa;
+    background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
+    background-image:-moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
+    background-image:-ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    background-image:-o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    background-image:linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    background-repeat:no-repeat;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+    */
+    background: #a9e4f7; /* Old browsers */
+background: -moz-linear-gradient(top, #a9e4f7 0%, #0fb4e7 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a9e4f7), color-stop(100%,#0fb4e7)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #a9e4f7 0%,#0fb4e7 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #a9e4f7 0%,#0fb4e7 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #a9e4f7 0%,#0fb4e7 100%); /* IE10+ */
+background: linear-gradient(top, #a9e4f7 0%,#0fb4e7 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9e4f7', endColorstr='#0fb4e7',GradientType=0 ); /* IE6-9 */
+    
+    border:1px solid #ccc;border-bottom-color:#bbb;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;border-radius:4px;
+    -webkit-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor:pointer;
+}
+.btnAltern:active{
+    box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.5);
+}
+/******** MENSAJES en el perfil publico *****/
+#cajaIzquierda{
+     width: 350px;
+     float: left;
+}
+#cajaDerecha{
+    float: right;
+    width: 490px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0px 0px 3px #000;
+}
+#cajaDerecha div:first-child{
+    background-color: #fafafa;
+    padding: 10px;
+    font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+    font-size: 1.3em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #CCC;
+}
+
+#cajaDerecha div:last-child{
+    background-color: #fafafa;
+    padding: 10px;
+    font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 1px solid #CCC;
+}
+
+#cajaDerecha div.mensaje:last-child {
+  font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+    background-color: #fafafa;
+    padding: 1px 10px;
+    border-top: 1px solid #BBB;
+    border-radius: 0;
+    text-align: right;
+    word-wrap: break-word;
+}
+
+#contenido{
+    border-radius: 0px;
+    background-color: #fafafa;
+}
+#contenido div{
+    
+    border-radius: 0px;
+    background-color: #fafafa;
+}
+#cuentaBloqueada{
+    height: 300px;
+    background-image: url(../images/sitio/rjiecg.gif);
+    font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+    text-align: center;
+    color: #fafafa;
+    font-size: 1.8em;
+    padding: 30px 10px 0px;
+}
+#asdgiagsbjklag{
+
+}
+#tituloDerecha{
+    /*
+     background-color: #fafafa;
+     padding: 10px;
+     font-family: Helvetica, Geneva, Arial,
+         SunSans-Regular, sans-serif;
+     font-size: 1.3em;
+     border-top-left-radius: 10px;
+     border-top-right-radius: 10px;
+     border-bottom: 1px solid #CCC;
+    */
+}
+#masMensajes{
+    cursor: pointer;
+}
+#alertNvosMensajes{
+    background-color: #fafafa;
+    padding: 10px;
+    font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+    text-align: center;
+    border-bottom: 1px solid #CCC;
+    cursor: pointer;
+
+}
+.mensaje{
+    font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+    background-color: #fafafa;
+    padding: 1px 10px;
+    border-top: 1px solid #BBB;
+    border-radius: 0;
+    word-wrap: break-word;
+}
+
+.mensaje .cMensaje{
+    padding: 5px;
+    font-size: 0.85em;
+    line-height: 17px;
+    text-align: left;
+    margin-top: -5px;
+}
+
+.mensaje .cMensaje a{
+    color: green;
+}
+
+.mensaje .cUserneim{
+    font-size: 1em;
+    float: left;
+    line-height: 0.8px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.mensaje .cData{
+    font-size: 0.8em;    
+    color: #999;
+    float: right;
+    font-style: italic;
+    text-align: right;
+}
+
+.mensaje p{
+    line-height: 10px;
+}
+
+.mensaje .cData a{
+    color: #CCC;
+    text-decoration: none;
+}
+
+.mensaje a{
+    color: black;
+    text-decoration: none;
+}
+
+.iconoMensaje{
+    float: right;
+    height: 16px;
+    width: 16px;
+    margin: -15px 2px 0px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.respuesta{
+    background-image: url(../images/sitio/ui/reply.png);
+}
+.fav{
+    background-image: url(../images/sitio/ui/fav.png);
+}
+
+.destacado{
+    box-shadow: 0px 0px 3px yellow;
+    background-color: mediumslateblue;
+}
+
+/******* Para la pantalla de mensaje único ****/
+div .midBox{
+     background-color: #fcfcfc;
+    border-radius: 10px;
+     margin: 30px auto; 
+    box-shadow: 0px 0px 3px #000;
+    padding: 10px 20px;
+    width: 600px;
+}
+
+#unMensaje{
+    background-color: #fcfcfc;
+    border-radius: 20px;
+     margin: 30px auto; 
+    box-shadow: 0px 0px 3px #000;
+    padding: 10px 20px;
+    width: 600px;
+}
+
+#unMensaje #profilepic{
+    float:left;
+    width: 70px;
+    margin-right: 10px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+#unMensaje .username{
+    font-size: 1.5em;
+    color: black; text-decoration: none;
+}
+#unMensaje .username a{
+    color: black;
+    text-decoration: none;
+}
+#unMensaje .contenido{
+    font-size: 1.7em;
+    word-wrap: break-word;
+}
+#unMensaje .mensajeInfo{
+    color: #CBCBCB;
+    font-size: 1em;
+    text-align: right;
+    font-style: italic;
+}
+#unMensaje .userInfo{
+    border-bottom: 1px solid #CCC;
+}
+
+/***** DIVISIONES ********/
+.divisionIzquierda{
+    background-color: #fafafa;
+    width: 350px;
+    box-shadow: 0px 0px 3px #000;
+    border-radius: 10px;
+    padding: 10px;
+    float:left;
+    margin: 10px 10px;
+    overflow-wrap: break-word;
+    font-family: Helvetica, Geneva, Arial,
+        SunSans-Regular, sans-serif;
+}
+
+#appInfo{
+    padding: 10px;
+    height: 20px;
+}
+#appInfo a, #appInfo span{
+    text-decoration: none;
+    font-size: 0.8em;
+    color: #666;
+    text-transform: lowercase;
+    padding: 0 3px;
+}
+#appInfo .appName{
+    padding: 20px 5px;
+    font-family: FredokaOne;
+    color: black;
+    text-transform: none;
+    text-decoration: none;
+}
