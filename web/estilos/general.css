@@ -376,7 +376,7 @@ div .midBox{
     width: 600px;
 }
 
-#unMensaje{
+.centradoM{
     background-color: #fcfcfc;
     border-radius: 20px;
      margin: 30px auto; 
@@ -384,6 +384,11 @@ div .midBox{
     padding: 10px 20px;
     width: 600px;
 }
+
+#unMensaje{
+    
+}
+
 
 #unMensaje #profilepic{
     float:left;

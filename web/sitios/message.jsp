@@ -11,6 +11,38 @@
         <link href="../estilos/general.css" rel="stylesheet" type="text/css" />
         <link href="../estilos/hyf.css" type="text/css" rel="stylesheet" />
         <script src="../js/jquery-1.7.1.js"></script>
+        <script>
+            //  Recuperar calificaciones:
+            function recuperaCalificaciones(){
+                var url = "../recuperaCalificacionesMsg?idM=<bean:write name="messageBean" property="idUnico" />";
+                $.getJSON(url,function(data){
+                    var fff= data;
+                    with(fff){
+                        if(calificadores == 0){
+                            $('#calif').text("Nadie ha calificado este mensaje");
+                        }else{
+                            $('#calif').text(calificacion);
+                            var califS = calificaciones;
+                            for(var i = 0; i < califS.length; i++){
+                                with(califS[i]){
+                                    var divCont = document.createElement("div");
+                                    var pUsuario = document.createElement("span");
+                                    pUsuario.className="cUserneim";
+                                    pUsuario.innerHTML="<a href='../usuario/" +calificador +"'>@"+calificador+"</a>";
+                                    divCont.appendChild(pUsuario);
+                                    var pCal = document.createElement("span");
+                                    pCal.className="cCalif";
+                                    pCal.innerHTML="&nbsp;" +calificacion;
+                                    divCont.appendChild(pCal);
+                                    document.getElementById("calificaciones").appendChild(divCont);
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            recuperaCalificaciones();
+        </script> 
     </head>
     <body>
         <jsp:include page="../rsc/header.jsp"></jsp:include>
@@ -27,7 +59,7 @@
                     </logic:notEmpty>
                 </div>
                 <div style="height: 50px;"></div>
-                <div id="unMensaje">
+                <div id="unMensaje" class="centradoM">
                     <div class="userInfo">
                         <img src="..<bean:write name="messageBean" property="imgUrl" />" id="profilepic" />
                         <p class="username">
@@ -40,6 +72,10 @@
                     </div>
                     <p class="contenido"><bean:write name="messageBean" property="contenido" /></p>
                     <p class="mensajeInfo"><bean:write name="messageBean" property="fechaPublicacion" /> via <bean:write name="messageBean" property="via" /> </p>
+                </div>
+                <div class="centradoM">
+                    <bean:message key="ui.calificaciones" />: <span id="calif"></span>
+                    <div id="calificaciones" style="max-height: 100px; overflow-y: scroll;"></div>
                 </div>
                 <div class="midBox" id="appInfo">
                     <jsp:include page="../rsc/appInfo.jsp" />

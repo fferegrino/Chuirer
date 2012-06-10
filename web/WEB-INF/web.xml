@@ -135,6 +135,10 @@
         <servlet-name>faveaMensaje</servlet-name>
         <servlet-class>ajax.webservices.faveaMensaje</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>recuperaCalificacionesMsg</servlet-name>
+        <servlet-class>ajax.webservices.recuperaCalificacionesMsg</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>action</servlet-name>
         <url-pattern>*.do</url-pattern>
@@ -254,6 +258,10 @@
     <servlet-mapping>
         <servlet-name>faveaMensaje</servlet-name>
         <url-pattern>/faveaMensaje</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>recuperaCalificacionesMsg</servlet-name>
+        <url-pattern>/recuperaCalificacionesMsg</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

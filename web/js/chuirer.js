@@ -25,7 +25,8 @@ function showTweetBox(action,id) {
 }
 
 function fav(faveado){
-    var url = "../faveaMensaje?idM="+faveado;
+    var calificacion = prompt("Escoge una calificación");
+    var url = "../faveaMensaje?idM="+faveado+"&c="+calificacion;
     $.getJSON(url, function(data){
         if(data.success){
             alert("Has calificado con éxito este mensaje");

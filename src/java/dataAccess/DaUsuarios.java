@@ -36,6 +36,7 @@ public class DaUsuarios {
     private String archivoStats;
     private String archivoSeguidos;
     private String carpetaMensajes;
+    private String carpetaFavoritos;
     private String archivoSeguidores;
     private String archivoPeticiones;
     private String archivoGrupos;
@@ -51,6 +52,7 @@ public class DaUsuarios {
         this.archivoSeguidos = "seguidos.xml";
         this.archivoSeguidores = "seguidores.xml";
         this.carpetaMensajes = "mensajes";
+        this.carpetaFavoritos = "calificaciones";
         this.archivoPeticiones = "peticiones.xml";
         this.archivoGrupos = "miembroDe.xml";
     }

@@ -4,23 +4,20 @@
  */
 package ajax.webservices;
 
-import chuirer.utilitarios.Funciones;
-import dataAccess.DaFaveados;
 import dataAccess.DaMensajeFaveado;
+import entidadesDeNegocio.EnMensajeCalificado;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 /**
  *
- * @author fferegrino
+ * @author Antonio
  */
-public class faveaMensaje extends HttpServlet {
+public class recuperaCalificacionesMsg extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -36,38 +33,10 @@ public class faveaMensaje extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        JSONObject respuesta = new JSONObject();
-        String usuarioLogueado = (String) request.getSession().getAttribute("usuarioLogueado");
-        String idMensaje = request.getParameter("idM");
-        Double calificacion = 8.0;
-        try {
-            calificacion = Double.parseDouble(request.getParameter("c"));
-        } catch (Exception e) {
-            
-        }
-        if (0 < calificacion && calificacion <= 10) {
-            if (!Funciones.cadenaNulaOVacia(usuarioLogueado)) {
-                if (!Funciones.cadenaNulaOVacia(idMensaje)) {
-                    DaFaveados daFaveados = new DaFaveados();
-                    daFaveados.agregaFav(usuarioLogueado, idMensaje,calificacion);
-                    DaMensajeFaveado daMensajeFaveado =  new DaMensajeFaveado();
-                    daMensajeFaveado.agregaCalificacion(idMensaje, usuarioLogueado, calificacion);
-                    respuesta.put("success", true);
-                    respuesta.put("mensaje", idMensaje);
-                } else {
-                    respuesta.put("success", false);
-                    respuesta.put("error", "Elige un mensaje");
-                }
-            } else {
-                respuesta.put("success", false);
-                respuesta.put("error", "Usuario no logueado");
-            }
-        }
-        else{
-            respuesta.put("success",false);
-            respuesta.put("error", "La calificación debe de ser entre 0 y 10");
-        }
-        out.write(respuesta.toJSONString());
+        String mensaje =  request.getParameter("idM");
+        DaMensajeFaveado daMensajeFaveado = new DaMensajeFaveado();
+        EnMensajeCalificado recuperaCalificaciones = daMensajeFaveado.recuperaCalificaciones(mensaje);
+        out.print(recuperaCalificaciones.toJSONObject().toJSONString());
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

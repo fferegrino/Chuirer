@@ -1,5 +1,7 @@
 package entidadesDeNegocio;
 
+import org.json.simple.JSONObject;
+
 /**
  * Clase que representa cada una de las calificaciones otorgadas a cada mensaje,
  * depende directamente de
@@ -46,6 +48,11 @@ public class EnLlaveCalificado {
         this.calificador = calificador;
     }
 
+    /**
+     * Función que compara dos objetos, dos objetos son iguales si los calificadores son iguales
+     * @param o El objeto a comparar
+     * @return <code>true<code> si los calificadores son iguales
+     */
     public boolean equals(Object o) {
         boolean esIgual = false;
         if (o instanceof EnLlaveCalificado) {
@@ -55,5 +62,12 @@ public class EnLlaveCalificado {
             }
         }
         return esIgual;
+    }
+    
+    public JSONObject toJSONObject(){
+        JSONObject  object = new JSONObject();
+        object.put("calificacion", this.calificacion);
+        object.put("calificador",this.calificador);
+        return object;
     }
 }
