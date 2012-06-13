@@ -139,6 +139,10 @@
         <servlet-name>recuperaCalificacionesMsg</servlet-name>
         <servlet-class>ajax.webservices.recuperaCalificacionesMsg</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>calculaCalificacionesUsuario</servlet-name>
+        <servlet-class>ajax.webservices.calculaCalificacionesUsuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>action</servlet-name>
         <url-pattern>*.do</url-pattern>
@@ -262,6 +266,10 @@
     <servlet-mapping>
         <servlet-name>recuperaCalificacionesMsg</servlet-name>
         <url-pattern>/recuperaCalificacionesMsg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>calculaCalificacionesUsuario</servlet-name>
+        <url-pattern>/calculaCalificacionesUsuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

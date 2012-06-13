@@ -123,6 +123,10 @@ public class DaMensajeFaveado {
      */
     private String rutaFavsMensaje(String idMensaje) {
             String usuario = idMensaje.split("\\.")[0];
+            File algo  = new File(this.rutaBuscarUser.getAbsolutePath() + "\\" + usuario + "\\mensajes\\calificaciones");
+            if(!algo.exists()){
+                algo.mkdir();
+            }
         return this.rutaBuscarUser.getAbsolutePath() + "\\" + usuario + "\\mensajes\\calificaciones\\fav." + idMensaje + ".xml";
     }
 }

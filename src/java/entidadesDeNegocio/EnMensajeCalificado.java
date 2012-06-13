@@ -53,12 +53,13 @@ public class EnMensajeCalificado {
     }
 
     public double getCalificacion() {
+        double res = 0;
         if (calificadores == 0) {
-            calificacion = 0;
+            res = 0;
         } else {
-            calificacion = calificacion / calificadores;
+            res = calificacion / calificadores;
         }
-        return calificacion;
+        return res;
     }
 
     public ArrayList<EnLlaveCalificado> getUsuariosFaveadores() {

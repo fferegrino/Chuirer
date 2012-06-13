@@ -67,6 +67,8 @@ public class loginAction extends org.apache.struts.action.Action {
         if ((new DaUsuarios()).validaUsuario(name, pass)) {
             ses.setAttribute("usuarioLogueado", name);
             ses.setAttribute("movil", esmovil);
+            String rol = new DaUsuarios().recuperaUsuario(name).getRol();
+            ses.setAttribute("rolencio",rol);
             return mapping.findForward(SUCCESS);
         }
 

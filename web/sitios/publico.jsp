@@ -125,31 +125,48 @@
                         }
                     });
                 }
+                
+                <logic:notEmpty scope="session" name="rolencio">
+                    <logic:equal scope="session" name="rolencio" value="prof">
+                            function getCalificacion(ids){
+                                var url = "../calculaCalificacionesUsuario?idU="+ids;
+                                $.getJSON(url,function(data){
+                                    if(data.success){
+                                        var msg = "Calificación promedio: " + data.calificacion;
+                                            msg = msg + "\nTotal de mensajes calificados: " + data.calificadores;
+                                            alert(msg);
+                                    }else{
+                                        alert(data.error);
+                                    }
+                                })
+                            }
+                    </logic:equal>
+                </logic:notEmpty>
                
                 
-                function setWaypoint(){
-                    $("#masMensajes").waypoint(function(event, direction){
+                    function setWaypoint(){
+                        $("#masMensajes").waypoint(function(event, direction){
 
-                        if (direction == 'down') {
-                            var fin = $(this);
-                            //alert(" d");
-                            //fin.css({'visibility' : 'visible'}); // mostramos "cargando..."
-                            fin.waypoint('remove'); // eliminamos el waypoint mientras mostramos datos
-                            // el settimeout "simula" la carga de datos (se debe quitar)
-                            cargaMensajes();
-                        }
-                    },opts);
-                }
+                            if (direction == 'down') {
+                                var fin = $(this);
+                                //alert(" d");
+                                //fin.css({'visibility' : 'visible'}); // mostramos "cargando..."
+                                fin.waypoint('remove'); // eliminamos el waypoint mientras mostramos datos
+                                // el settimeout "simula" la carga de datos (se debe quitar)
+                                cargaMensajes();
+                            }
+                        },opts);
+                    }
                 
-                function seguir(follow){
-                    var url = "../seguirOnoSeguir?u=<bean:write name="publicProfile" property="username" filter="false" />" + "&seguir=" + follow;
-                    $.getJSON(url,function(resultado){
-                        if(resultado.success){
-                            location.reload();
-                        }
-                    });
+                    function seguir(follow){
+                        var url = "../seguirOnoSeguir?u=<bean:write name="publicProfile" property="username" filter="false" />" + "&seguir=" + follow;
+                        $.getJSON(url,function(resultado){
+                            if(resultado.success){
+                                location.reload();
+                            }
+                        });
 
-                }
+                    }
             </script>
         </logic:equal>
         <logic:notEqual name="publicProfile" property="visible" value="true">  
@@ -172,7 +189,7 @@
     </head>
     <body>
         <jsp:include page="../rsc/header.jsp"></jsp:include>
-            <div class="innerDiv">
+        <div class="innerDiv">
             <html:form action="/profile">
                 <div id="usrMenuBar">
                     <input type="hidden" id="lastActHD" />
@@ -208,6 +225,16 @@
                                 <p><bean:message key="ui.followers" /></p>
                             </div>
                         </html:link>
+                        <logic:notEmpty scope="session" name="rolencio">
+                            <logic:equal scope="session" name="rolencio" value="prof">
+                                <a href="javascript: void(0);" onclick="getCalificacion('<bean:write name="publicProfile" property="username" filter="false" />')">
+                                    <div class="stats">
+                                        <p id="lbNumeroSeguidores"> ver</p>
+                                        <p>Calificación</p>
+                                    </div>
+                                </a>
+                            </logic:equal>
+                        </logic:notEmpty>
                     </div>
                     <div class="divisionIzquierda">
                         <logic:equal name="publicProfile" property="visible" value="false">
